@@ -1,0 +1,164 @@
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Main{
+
+    private String[] MyHelmet = {"Holland Lop","Netherland Dwarf"};
+    public List <helmet> jenishelmet = new ArrayList<helmet>();
+    public List <helmet> jenishelmet2 = new ArrayList<helmet>();
+
+    public static void main(String[] args) {
+
+        System.out.println("===================================================");
+        System.out.println("\t\tJenis - jenis helmet");
+        System.out.println("===================================================");
+
+        Scanner myObj = new Scanner(System.in);
+        Main m = new Main();
+
+        System.out.println("\nPilihlah angka untuk melanjutkan");
+        System.out.println("1. Menambahkan jenis helmet baru");
+        System.out.println("2. Melihat jenis helmet");
+        System.out.print("\nPilih angka : ");
+
+        String input = myObj.nextLine();
+        int code = Integer.parseInt(input);
+        System.out.println("===================================================");
+
+        switch (code) {
+            case 1:
+                m.InputListhelmet();
+                break;
+            case 2:
+                m.ShowListHelmet();
+                break;
+
+            default:
+                System.out.println("Pilihan tidak terdaftar");
+                break;
+        }
+
+    }
+
+    public void InputListHelmet(){
+
+        System.out.println("\n---------------------------------------------------");
+        System.out.println("\t\tMenambahkan helmet");
+        System.out.println("---------------------------------------------------\n");
+        System.out.println("Pilih jenis helmet : ");
+
+        int i=1;
+        for (String helmet : MyHelmet){
+            System.out.println(i + "." + Helmet);
+            i++;
+        }
+
+        System.out.print("\nMasukkan pilihan : ");
+        Scanner myObj = new Scanner(System.in);
+
+        String inputProduct = myObj.nextLine();
+        int product = Integer.parseInt(inputProduct);
+
+        switch (product) {
+            case 1:
+                try {
+                    jenisHelmet1 =  InputHelmetiHl();
+                } catch (Exception e) {
+                    System.out.println("Masukkan data yang valid!");
+                    System.out.println("Error: "+e.getMessage());
+                }
+                break;
+
+            case 2:
+                try {
+                    jenisHelmet2 =  InputHelmetND();
+                } catch (Exception e) {
+                    System.out.println("Masukkan data yang valid!");
+                    System.out.println("Error: "+e.getMessage());
+                }
+                break;
+
+            default:
+                break;
+
+        }
+
+        myObj.close();
+
+    }
+
+    public List InputHelmetHL() {
+
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("\n============= Jenis Helmet Baru =============");
+
+        int jmlData1 = 2;
+        for (int i = 0; i < jmlData1; i++) {
+           helmet k1 = new Helmet();
+            System.out.println("Jenis ke-" + (i+1) + " :");
+
+            System.out.print("Pilihan Warna : ");
+            String Warna = myObj.nextLine();
+            k1.setWarna(warna);
+
+            System.out.print("Bentuk Produk : ");
+            String Produk = myObj.nextLine();
+            k1.setProduk(Produk);
+
+            System.out.print("Warna Produk : ");
+            String warna = myObj.nextLine();
+            k1.setWarna(warna);
+
+            System.out.println('\n');
+            this.jenisHelmet1.add(k1);
+        }
+
+        System.out.println("\n");
+        myObj.close();
+        return this.jenisHelmet1;
+
+    }
+
+    public List InputHelmetND() {
+
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("\n============= Jenis Helmet Baru =============");
+
+        int jmlData2 = 2;
+        for (int i = 0; i < jmlData2; i++) {
+           Snack k2 = new Snack();
+            System.out.println("Jenis ke-" + (i+1) + ":");
+
+            System.out.print("Pilihan warna : ");
+            String warna = myObj.nextLine();
+            k2.setWarna(warna);
+
+            System.out.print("Bentuk Produk : ");
+            String Produk = myObj.nextLine();
+            k2.setProduk(produk);
+
+            System.out.print("Warna Produk : ");
+            String Produk = myObj.nextLine();
+            k2.setWarna(warna);
+
+            System.out.println('\n');
+            this.jenisHelmet2.add(k2);
+        }
+
+        System.out.println("\n");
+        myObj.close();
+        return this.jenishelmet2;
+
+    }
+
+    public void ShowListHelmet(){
+
+        for (String x : MyHelmeti) {
+            System.out.println("helmet yang sudah ada yaitu : "+ x);
+        }
+
+    }
+
+}
